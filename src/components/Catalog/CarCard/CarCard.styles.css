@@ -11,7 +11,7 @@
 }
 
 .card-specs-list {
-  @apply mt-2 text-xs flex flex-wrap gap-2 font-manrope text-black-50;
+  @apply mt-2 text-xs flex flex-wrap gap-2 font-manrope text-light-gray;
 }
 
 .card-specs-item {

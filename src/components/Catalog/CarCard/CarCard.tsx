@@ -6,7 +6,6 @@ import { RentalModal } from '..';
 import './CarCard.styles.css';
 import { Car } from '../../../redux/catalog';
 
-
 interface CarCardProps {
   car: Car;
 }
@@ -39,31 +38,29 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
         <div className="mt-4">
           <div className="flex justify-between">
             <h4>
-              {car.make}{' '}
-              <span className="text-blue-primary font-medium">{car.model}</span>
-              , {car.year}
+              {car.make} <span className="model-span">{car.model}</span>,{' '}
+              {car.year}
             </h4>
             <p className="font-medium">{car.rentalPrice}</p>
           </div>
-          <ul className="mt-2 text-xs text-black-50 flex flex-wrap gap-2">
-            <li className="flex gap-2">
-              <p>{car.address}</p>{' '}
-              <div className="h-full w-px bg-black-10"></div>
+          <ul className="card-specs-list">
+            <li className="card-specs-item">
+              <p>{car.address}</p> <div className="card-specs-divider"></div>
             </li>
-            <li className="flex gap-2">
+            <li className="card-specs-item">
               <p>{car.rentalCompany}</p>
-              <div className="h-full w-px bg-black-10"></div>
+              <div className="card-specs-divider"></div>
             </li>
-            <li className="flex gap-2">
-              <p>{car.type}</p> <div className="h-full w-px bg-black-10"></div>
+            <li className="card-specs-item">
+              <p>{car.type}</p> <div className="card-specs-divider"></div>
             </li>
-            <li className="flex gap-2">
-              <p>{car.make}</p> <div className="h-full w-px bg-black-10"></div>
+            <li className="card-specs-item">
+              <p>{car.make}</p> <div className="card-specs-divider"></div>
             </li>
-            <li className="flex gap-2">
-              <p>{car.id}</p> <div className="h-full w-px bg-black-10"></div>
+            <li className="card-specs-item">
+              <p>{car.id}</p> <div className="card-specs-divider"></div>
             </li>
-            <li className="flex gap-2">
+            <li className="card-specs-item">
               <p>{car.functionalities[0]}</p>
             </li>
           </ul>
