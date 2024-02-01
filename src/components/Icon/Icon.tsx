@@ -4,8 +4,8 @@ interface IconProps {
   name: string;
   size: number;
   fill?: string;
-  stroke: string;
-  className: string;
+  stroke?: string;
+  className?: string;
 }
 
 const Icon: React.FC<IconProps> = ({ name, size, fill, stroke, className }) => {
