@@ -1,5 +1,7 @@
+import { Catalog } from '../components';
+
 const CatalogPage: React.FC = () => {
-  return <div>CatalogPage</div>;
+  return <Catalog />;
 };
 
 export default CatalogPage;
