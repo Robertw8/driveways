@@ -13,7 +13,7 @@ const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
 }) => {
   return (
     <Button
-      className={`w-full h-full font-semibold text-xs md:text-sm bg-blue-primary uppercase text-white font-manrope
+      className={`w-full h-full font-semibold text-xs md:text-sm bg-blue-primary capitalize text-white font-manrope
      hover:bg-blue-secondary hover:text-white focus:bg-blue-secondary focus:text-white ${className}`}
       type={type}
       onClick={onClick}
