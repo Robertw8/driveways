@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Layout } from '.';
 
 import routes from '../routes';
@@ -17,6 +17,7 @@ const App: React.FC = () => {
           <Route path={routes.CATALOG} element={<CatalogPage />} />
           <Route path={routes.FAVORITES} element={<FavoritesPage />} />
         </Route>
+        <Route path="*" element={<Navigate to={routes.HOME} />} />
       </Routes>
     </Suspense>
   );
