@@ -1,7 +1,7 @@
 import { Modal, ModalProps } from 'antd';
 import { ButtonPrimary, Icon } from '../..';
 
-import '../CarCard/CarCard.styles.css';
+import '../CarsItem/CarsItem.styles.css';
 import { Car } from '../../../redux/catalog';
 
 interface RentalModal extends ModalProps {
@@ -19,7 +19,7 @@ const RentalModal: React.FC<RentalModal> = ({ open, car, onCancel, onOk }) => {
       footer={null}
       maskClosable
       focusTriggerAfterClose
-      closeIcon={<Icon name="x" size={24} stroke="#121417" />}
+      closeIcon={<Icon name="x" size={24} className="stroke-primary" />}
       onCancel={onCancel}
       onOk={onOk}
       centered
@@ -99,12 +99,8 @@ const RentalModal: React.FC<RentalModal> = ({ open, car, onCancel, onOk }) => {
             </p>
           </li>
         </ul>
-        <div className="w-40 mt-6">
-          <ButtonPrimary
-            text="Rental car"
-            onClick={onOk}
-            type="primary"
-          ></ButtonPrimary>
+        <div className="w-40 h-11 mt-6">
+          <ButtonPrimary text="Rental car" onClick={onOk}></ButtonPrimary>
         </div>
       </div>
     </Modal>

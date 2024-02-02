@@ -31,11 +31,11 @@ const SearchInput: React.FC<SearchInputProps> = ({
         placeholder={placeholder}
         defaultActiveFirstOption={false}
         suffixIcon={
-          <Icon name="chevron" size={20} stroke="#121417" fill="none" />
+          <Icon name="chevron" size={20} className="stroke-primary fill-none" />
         }
         notFoundContent={<Empty image={Empty.PRESENTED_IMAGE_SIMPLE} />}
         allowClear={{
-          clearIcon: <Icon name="x" size={16} stroke="#121417" />,
+          clearIcon: <Icon name="x" size={16} className="stroke-primary" />,
         }}
         onSearch={onSearch}
         onChange={onChange}
