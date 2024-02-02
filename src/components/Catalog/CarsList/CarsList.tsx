@@ -6,7 +6,7 @@ import { CarsItem } from '..';
 import { getCatalog } from '../../../redux/catalog';
 import { getFavorites } from '../../../redux/favorites';
 import type { AppDispatch } from '../../../redux';
-import './CarsList.styles.css';
+import './tailwind.css';
 
 const CarsList: React.FC = () => {
   const { cars, filters } = useCatalog();

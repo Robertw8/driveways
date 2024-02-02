@@ -5,7 +5,7 @@ import { useFavorites } from '../../../hooks';
 import { ButtonPrimary, Icon } from '../..';
 import { RentalModal } from '..';
 
-import './CarsItem.styles.css';
+import './tailwind.css';
 import clsx from 'clsx';
 import {
   addCarToFavorites,
@@ -36,16 +36,16 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
   return (
     <>
       <li className="w-72">
-        <div className="relative w-full h-72 rounded-xl card-gradient">
+        <div className={`relative w-full h-64 rounded-xl card-gradient`}>
           <img
             src={car.img}
             alt={`${car.make} ${car.model}`}
-            className="rounded-xl"
+            className="rounded-xl object-cover"
           />
           <button
             type="button"
             onClick={handleHeartClick}
-            className="favorites-button"
+            className="favorites-button "
             aria-label="add car to favorites"
           >
             <Icon

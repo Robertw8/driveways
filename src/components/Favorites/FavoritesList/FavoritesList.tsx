@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useFavorites } from '../../../hooks';
 
 import { CarsItem } from '../..';
-import '../../Catalog/CarsList/CarsList.styles.css';
+import '../../Catalog/CarsList/tailwind.css';
 import type { AppDispatch } from '../../../redux';
 import { getFavorites } from '../../../redux/favorites';
 

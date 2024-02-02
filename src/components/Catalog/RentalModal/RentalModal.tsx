@@ -1,7 +1,7 @@
 import { Modal, ModalProps } from 'antd';
 import { ButtonPrimary, Icon } from '../..';
 
-import '../CarsItem/CarsItem.styles.css';
+import '../CarsItem/tailwind.css';
 import { Car } from '../../../redux/catalog';
 
 interface RentalModal extends ModalProps {

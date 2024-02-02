@@ -1,7 +1,7 @@
 import { AutoComplete, AutoCompleteProps, Empty } from 'antd';
 import { Icon } from '../../..';
 
-import './SearchInput.styles.css';
+import './tailwind.css';
 
 interface SearchInputProps extends AutoCompleteProps {
   label: string;

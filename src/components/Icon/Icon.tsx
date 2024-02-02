@@ -1,4 +1,4 @@
-import sprite from '../../assets/sprite.svg';
+import sprite from '../../assets/images/sprite.svg';
 
 interface IconProps {
   name: string;
