@@ -6,7 +6,7 @@ import routes from '../routes';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const CatalogPage = lazy(() => import('../pages/CatalogPage'));
-const FavoritesPage = lazy(() => import('../pages/CatalogPage'));
+const FavoritesPage = lazy(() => import('../pages/FavoritesPage'));
 
 const App: React.FC = () => {
   return (
