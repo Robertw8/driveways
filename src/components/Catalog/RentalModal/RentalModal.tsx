@@ -68,8 +68,8 @@ const RentalModal: React.FC<RentalModal> = ({ open, car, onCancel, onOk }) => {
         <p className="mt-4 text-sm text-primary">{car.description}</p>
         <p className="mt-6 font-semibold">Accessories and functionalities:</p>
         <ul className="card-specs-list">
-          {car.accessories.concat(car.functionalities).map(item => (
-            <li className="card-specs-item">
+          {car.accessories.concat(car.functionalities).map((item, index) => (
+            <li className="card-specs-item" key={index}>
               <p>{item}</p>
               <div className="card-specs-divider"></div>
             </li>
@@ -77,8 +77,8 @@ const RentalModal: React.FC<RentalModal> = ({ open, car, onCancel, onOk }) => {
         </ul>
         <p className="mt-6 font-semibold">Rental Conditions:</p>
         <ul className="mt-2 text-xs text-gray flex flex-wrap max-w-80 gap-4">
-          {conditionsArray.map(item => (
-            <li>
+          {conditionsArray.map((item, index) => (
+            <li key={index}>
               <p>{item}</p>
             </li>
           ))}
