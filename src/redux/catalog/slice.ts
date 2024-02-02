@@ -1,10 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Car, InitialState, getCatalog } from '.';
+import { Car, InitialState, getCatalog, setFilters } from '.';
 
 const initialState: InitialState = {
   cars: [],
   isLoading: false,
   error: '',
+  filters: {
+    page: 1,
+    search: '',
+    rentalPrice: '',
+  },
 };
 
 const slice = createSlice({
@@ -18,13 +23,20 @@ const slice = createSlice({
         state.error = '';
       })
       .addCase(getCatalog.fulfilled, (state, { payload }) => {
-        state.cars = payload as Car[];
+        state.cars = [...state.cars, ...payload] as Car[];
         state.isLoading = false;
         state.error = '';
       })
       .addCase(getCatalog.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message as string;
+      })
+      .addCase(setFilters, (state, { payload }) => {
+        state.filters = {
+          page: payload.page as number,
+          search: payload.search as string,
+          rentalPrice: payload.price as string,
+        };
       });
   },
 });

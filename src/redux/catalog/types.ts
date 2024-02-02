@@ -21,6 +21,11 @@ interface InitialState {
   cars: Car[];
   isLoading: boolean;
   error: Error | string;
+  filters: {
+    page: number;
+    search: string;
+    rentalPrice: string;
+  };
 }
 
 export type { InitialState, Car };

@@ -6,12 +6,12 @@ import { AppDispatch } from '../../../redux';
 import { getCatalog } from '../../../redux/catalog';
 
 const CarsList: React.FC = () => {
-  const { cars } = useCatalog();
+  const { cars, filters } = useCatalog();
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(getCatalog({}));
-  }, [dispatch]);
+    dispatch(getCatalog(filters));
+  }, [dispatch, filters]);
 
   return (
     <ul className="flex flex-wrap justify-center gap-y-12 gap-x-7">

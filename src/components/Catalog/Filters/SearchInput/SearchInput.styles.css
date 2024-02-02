@@ -1,0 +1,20 @@
+.search-input {
+  @apply w-full h-full;
+}
+
+.search-input .ant-select-selection-search-input {
+  @apply text-primary font-semibold text-lg capitalize;
+}
+
+.search-input .ant-select-outlined {
+  @apply border-none;
+}
+
+.search-input .ant-select-selection-placeholder {
+  @apply text-primary font-semibold text-lg;
+}
+
+.search-input.ant-select-outlined:not(.ant-select-customize-input)
+  .ant-select-selector {
+  border: none;
+}
