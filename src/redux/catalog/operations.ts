@@ -5,21 +5,19 @@ import { createAction } from '@reduxjs/toolkit';
 const BASE_URL = 'https://65baefd5b4d53c066553b5e4.mockapi.io';
 
 interface GetCatalogArgs {
-  page: number;
   search?: string;
   rentalPrice?: string;
 }
 
 const getCatalog = operationWrapper(
   'catalog/getCatalog',
-  async ({ page, search, rentalPrice }: GetCatalogArgs) => {
-    console.log(rentalPrice);
+  async ({ search, rentalPrice }: GetCatalogArgs) => {
     const response = await axios.get(`${BASE_URL}/advert`, {
       params: {
-        page,
+        page: 1,
+        limit: 12,
         search,
         rentalPrice,
-        limit: 12,
       },
     });
 
@@ -28,8 +26,30 @@ const getCatalog = operationWrapper(
   }
 );
 
+interface GetCatalogByPageArgs {
+  page: number;
+  search?: string;
+  price?: string;
+}
+
+const getCatalogByPage = operationWrapper(
+  'catalog/getCatalogByPage',
+  async ({ page = 2, search, price }: GetCatalogByPageArgs) => {
+    const response = await axios.get(`${BASE_URL}/advert`, {
+      params: {
+        page,
+        limit: 12,
+        search,
+        price,
+      },
+    });
+
+    return response.data;
+  }
+);
+
 const setFilters = createAction<{ [key: string]: string | number }>(
   'catalog/setFilters'
 );
 
-export { getCatalog, setFilters };
+export { getCatalog, getCatalogByPage, setFilters };

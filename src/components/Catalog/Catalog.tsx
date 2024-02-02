@@ -5,11 +5,11 @@ import { CarsList } from '.';
 import { Filters } from './Filters';
 
 import { AppDispatch } from '../../redux';
-import { setFilters } from '../../redux/catalog';
+import { getCatalogByPage, setFilters } from '../../redux/catalog';
 
 const Catalog: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { filters, cars } = useCatalog();
+  const { filters, paginationEnabled } = useCatalog();
 
   const handleLoadMoreClick = () => {
     dispatch(
@@ -18,16 +18,16 @@ const Catalog: React.FC = () => {
         page: filters.page + 1,
       })
     );
-  };
 
-  const canLoadMore = cars.length > filters.page * 12;
+    dispatch(getCatalogByPage(filters));
+  };
 
   return (
     <>
       <Filters />
       <div className="mt-20 mb-96">
         <CarsList />
-        {canLoadMore && (
+        {paginationEnabled && (
           <div className="mt-24 flex justify-center">
             <button
               type="button"

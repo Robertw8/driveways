@@ -26,6 +26,7 @@ interface InitialState {
     search: string;
     rentalPrice: string;
   };
+  paginationEnabled: boolean;
 }
 
 export type { InitialState, Car };

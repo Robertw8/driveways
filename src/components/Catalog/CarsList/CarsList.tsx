@@ -10,8 +10,13 @@ const CarsList: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(getCatalog(filters));
-  }, [dispatch, filters]);
+    dispatch(
+      getCatalog({
+        search: filters.search,
+        rentalPrice: filters.rentalPrice,
+      })
+    );
+  }, [dispatch, filters.search]);
 
   return (
     <ul className="flex flex-wrap justify-center gap-y-12 gap-x-7">
