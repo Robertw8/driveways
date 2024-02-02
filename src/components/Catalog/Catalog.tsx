@@ -21,7 +21,7 @@ const Catalog: React.FC = () => {
   return (
     <>
       <Filters />
-      <div className="mt-20 mb-96">
+      <div className="mt-10">
         <CarsList />
         {paginationEnabled && (
           <div className="mt-24 flex justify-center">
