@@ -65,7 +65,7 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
             </li>
           </ul>
         </div>
-        <div className="mt-7">
+        <div className="mt-7 h-11">
           <ButtonPrimary
             text="Learn more"
             onClick={() => setIsModalOpen(true)}

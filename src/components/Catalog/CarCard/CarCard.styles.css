@@ -11,7 +11,7 @@
 }
 
 .card-specs-list {
-  @apply mt-2 text-xs flex flex-wrap gap-2 font-manrope text-light-gray;
+  @apply mt-2 text-xs flex flex-wrap gap-2 font-manrope text-light-gray capitalize;
 }
 
 .card-specs-item {
