@@ -21,9 +21,10 @@ const NavBar: React.FC = () => {
             text="Home"
             type="default"
             className={clsx(
-              'hover:bg-transparent focus:bg-transparent',
+              !atHome &&
+                'hover:bg-transparent focus:bg-transparent bg-transparent text-white',
               atHome &&
-                'text-blue-950 bg-white hover:bg-white hover:text-blue-950 focus:bg-white focus:text-blue-950'
+                'text-blue-primary bg-white hover:bg-white hover:text-blue-primary focus:bg-white focus:text-blue-primary'
             )}
             onClick={() => navigate(routes.HOME)}
           >
@@ -35,9 +36,10 @@ const NavBar: React.FC = () => {
             text="Catalog"
             type="default"
             className={clsx(
-              'hover:bg-transparent focus:bg-transparent',
+              !atCatalog &&
+                'hover:bg-transparent focus:bg-transparent bg-transparent text-white',
               atCatalog &&
-                'text-blue-950 bg-white hover:bg-white hover:text-blue-950 focus:bg-white focus:text-blue-950'
+                'text-blue-primary bg-white hover:bg-white hover:text-blue-primary focus:bg-white focus:text-blue-primary'
             )}
             onClick={() => navigate(routes.CATALOG)}
           >
@@ -49,9 +51,10 @@ const NavBar: React.FC = () => {
             text="Favorites"
             type="default"
             className={clsx(
-              'hover:bg-transparent focus:bg-transparent',
+              !atFavorites &&
+                'hover:bg-transparent focus:bg-transparent bg-transparent text-white',
               atFavorites &&
-                'text-blue-950 bg-white hover:bg-white hover:text-blue-950 focus:bg-white focus:text-blue-950'
+                'text-blue-primary bg-white hover:bg-white hover:text-blue-primary focus:bg-white focus:text-blue-primary'
             )}
             onClick={() => navigate(routes.FAVORITES)}
           >
