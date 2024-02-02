@@ -3,4 +3,5 @@ export { default as Layout } from './Layout';
 export { Icon } from './Icon';
 export { Header } from './Header';
 export { ButtonPrimary } from './ButtonPrimary';
-export { Catalog, CarCard, CarsList } from './Catalog';
+export { Catalog, CarsItem, CarsList } from './Catalog';
+export { Favorites } from './Favorites';

@@ -21,3 +21,15 @@
 .card-specs-divider {
   @apply h-full w-px bg-black-10;
 }
+
+.favorites-button {
+  @apply absolute top-5 right-5 w-5 h-5 bg-transparent border-none duration-150 hover:scale-105;
+}
+
+.favorites-button:focus {
+  outline: none;
+}
+
+.favorites-button:hover svg {
+  stroke: #fff !important;
+}
