@@ -45,7 +45,7 @@ const RentalModal: React.FC<RentalModal> = ({ open, car, onCancel, onOk }) => {
           </li>
 
           <li className="card-specs-item">
-            <p>Id: {car.id}</p>
+            <p>Id: {car.car_id}</p>
             <div className="card-specs-divider"></div>
           </li>
           <li className="card-specs-item">

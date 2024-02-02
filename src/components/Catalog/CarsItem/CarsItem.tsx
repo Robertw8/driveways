@@ -83,7 +83,7 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
               <p>{car.make}</p> <div className="card-specs-divider"></div>
             </li>
             <li className="card-specs-item">
-              <p>{car.id}</p> <div className="card-specs-divider"></div>
+              <p>{car.car_id}</p> <div className="card-specs-divider"></div>
             </li>
             <li className="card-specs-item">
               <p>{car.functionalities[0]}</p>
