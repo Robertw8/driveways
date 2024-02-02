@@ -59,9 +59,8 @@ const Filters: React.FC = () => {
         onSearch={(value: string) => setPriceValue(value)}
         onClear={() => dispatch(setFilters({ ...filters, rentalPrice: '' }))}
       />
-
       <div className="w-32 h-12">
-        <ButtonPrimary text="Search" htmlType="submit" className="capitalize" />
+        <ButtonPrimary text="Search" htmlType="submit" />
       </div>
     </form>
   );
