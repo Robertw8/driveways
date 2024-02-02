@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useCatalog } from '../../hooks';
 
@@ -5,21 +6,16 @@ import { CarsList } from '.';
 import { Filters } from './Filters';
 
 import { AppDispatch } from '../../redux';
-import { getCatalogByPage, setFilters } from '../../redux/catalog';
+import { getCatalogByPage } from '../../redux/catalog';
 
 const Catalog: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { filters, paginationEnabled } = useCatalog();
+  const { paginationEnabled } = useCatalog();
+  const pageRef = useRef(1);
 
   const handleLoadMoreClick = () => {
-    dispatch(
-      setFilters({
-        ...filters,
-        page: filters.page + 1,
-      })
-    );
-
-    dispatch(getCatalogByPage(filters));
+    pageRef.current += 1;
+    dispatch(getCatalogByPage({ page: pageRef.current }));
   };
 
   return (

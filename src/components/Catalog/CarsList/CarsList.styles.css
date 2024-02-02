@@ -1,0 +1,3 @@
+.cars-list {
+  @apply flex flex-wrap justify-center gap-y-12 gap-x-7;
+}

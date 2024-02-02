@@ -1,15 +1,20 @@
 import { useEffect } from 'react';
-import { CarCard } from '../..';
-import { useCatalog } from '../../../hooks';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../../redux';
+import { useCatalog } from '../../../hooks';
+
+import { CarsItem } from '..';
 import { getCatalog } from '../../../redux/catalog';
+import { getFavorites } from '../../../redux/favorites';
+import type { AppDispatch } from '../../../redux';
+import './CarsList.styles.css';
 
 const CarsList: React.FC = () => {
   const { cars, filters } = useCatalog();
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
+    dispatch(getFavorites({}));
+
     dispatch(
       getCatalog({
         search: filters.search,
@@ -19,9 +24,9 @@ const CarsList: React.FC = () => {
   }, [dispatch, filters.search]);
 
   return (
-    <ul className="flex flex-wrap justify-center gap-y-12 gap-x-7">
+    <ul className="cars-list">
       {cars.map((car, index) => (
-        <CarCard car={car} key={index} />
+        <CarsItem car={car} key={index} />
       ))}
     </ul>
   );
