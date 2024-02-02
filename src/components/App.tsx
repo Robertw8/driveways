@@ -1,6 +1,6 @@
 import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Layout } from '.';
+import { Layout, Loader } from '.';
 
 import routes from '../routes';
 
@@ -10,7 +10,7 @@ const FavoritesPage = lazy(() => import('../pages/FavoritesPage'));
 
 const App: React.FC = () => {
   return (
-    <Suspense fallback={'Loading...'}>
+    <Suspense fallback={<Loader size="large" />}>
       <Routes>
         <Route path={routes.HOME} element={<Layout />}>
           <Route index element={<HomePage />} />

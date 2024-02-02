@@ -6,3 +6,4 @@ export { ButtonPrimary } from './ButtonPrimary';
 export { Catalog, CarsItem, CarsList } from './Catalog';
 export { Favorites } from './Favorites';
 export { Home } from './Home';
+export { Loader } from './Loader';
