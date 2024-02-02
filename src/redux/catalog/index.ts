@@ -7,4 +7,4 @@ export {
   selectFilters,
   selectPaginationEnabled,
 } from './selectors';
-export type { Car, InitialState } from './types';
+export type { Car, CatalogInitialState } from './types';

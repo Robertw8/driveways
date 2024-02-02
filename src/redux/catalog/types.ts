@@ -15,18 +15,18 @@ interface Car {
   address: string;
   rentalConditions: string;
   mileage: number;
+  car_id: string;
 }
 
-interface InitialState {
+interface CatalogInitialState {
   cars: Car[];
   isLoading: boolean;
   error: Error | string;
   filters: {
-    page: number;
     search: string;
     rentalPrice: string;
   };
   paginationEnabled: boolean;
 }
 
-export type { InitialState, Car };
+export type { CatalogInitialState, Car };

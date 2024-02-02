@@ -2,7 +2,7 @@ import axios from 'axios';
 import { operationWrapper } from '../../helpers';
 import { createAction } from '@reduxjs/toolkit';
 
-const BASE_URL = 'https://65baefd5b4d53c066553b5e4.mockapi.io';
+axios.defaults.baseURL = 'https://65baefd5b4d53c066553b5e4.mockapi.io';
 
 interface GetCatalogArgs {
   search?: string;
@@ -12,7 +12,7 @@ interface GetCatalogArgs {
 const getCatalog = operationWrapper(
   'catalog/getCatalog',
   async ({ search, rentalPrice }: GetCatalogArgs) => {
-    const response = await axios.get(`${BASE_URL}/advert`, {
+    const response = await axios.get(`/advert`, {
       params: {
         page: 1,
         limit: 12,
@@ -21,7 +21,6 @@ const getCatalog = operationWrapper(
       },
     });
 
-    console.log(response.data);
     return response.data;
   }
 );
@@ -35,7 +34,7 @@ interface GetCatalogByPageArgs {
 const getCatalogByPage = operationWrapper(
   'catalog/getCatalogByPage',
   async ({ page = 2, search, price }: GetCatalogByPageArgs) => {
-    const response = await axios.get(`${BASE_URL}/advert`, {
+    const response = await axios.get(`/advert`, {
       params: {
         page,
         limit: 12,
