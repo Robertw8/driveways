@@ -23,7 +23,7 @@ const Video: React.FC = () => {
   }, []);
 
   return (
-    window.innerWidth > 976 && (
+    window.innerWidth >= 976 && (
       <div className="block w-full fixed left-0 -z-50">
         <video
           muted
