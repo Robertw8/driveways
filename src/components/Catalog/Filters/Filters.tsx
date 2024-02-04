@@ -54,7 +54,7 @@ const Filters: React.FC = () => {
 
   return (
     <form
-      className="flex justify-center items-end gap-4 h-12"
+      className="flex flex-col items-start mt-20 mb-32 justify-center md:flex-row md:mt-0 md:mb-0 md:items-end gap-4 h-12"
       onSubmit={handleSubmit}
     >
       <SearchInput

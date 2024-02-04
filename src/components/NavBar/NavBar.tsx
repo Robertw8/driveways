@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
 
   return (
     <nav>
-      <ul className="flex gap-10 items-center justify-center">
+      <ul className="flex gap-4 items-center justify-center md:gap-10">
         <li className="h-9">
           <ButtonPrimary
             text="Home"
