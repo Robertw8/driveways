@@ -11,6 +11,7 @@ import {
   addCarToFavorites,
   deleteCarFromFavorites,
 } from '../../../redux/favorites';
+import 'animate.css';
 
 import type { Car } from '../../../redux/catalog';
 import type { AppDispatch } from '../../../redux';
@@ -45,7 +46,10 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
           <button
             type="button"
             onClick={handleHeartClick}
-            className="favorites-button "
+            className={clsx(
+              'favorites-button',
+              isFavorite && 'animate__bounceIn'
+            )}
             aria-label="add car to favorites"
           >
             <Icon
@@ -62,11 +66,11 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
         </div>
         <div className="mt-4">
           <div className="flex justify-between">
-            <h4>
+            <h4 className="overflow-hidden text-ellipsis max-w-60 whitespace-nowrap">
               {car.make} <span className="model-span">{car.model}</span>,{' '}
               {car.year}
             </h4>
-            <p className="font-medium">{car.rentalPrice}</p>
+            <p className="font-medium">$ {car.rentalPrice}</p>
           </div>
           <ul className="card-specs-list">
             <li className="card-specs-item">
