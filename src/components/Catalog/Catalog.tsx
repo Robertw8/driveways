@@ -10,7 +10,7 @@ import { getCatalogByPage } from '../../redux/catalog';
 
 const Catalog: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { paginationEnabled } = useCatalog();
+  const { paginationEnabled, isLoading } = useCatalog();
   const pageRef = useRef(1);
 
   const handleLoadMoreClick = () => {
@@ -23,7 +23,7 @@ const Catalog: React.FC = () => {
       <Filters />
       <div className="mt-10">
         <CarsList />
-        {paginationEnabled && (
+        {paginationEnabled && !isLoading && (
           <div className="mt-24 flex justify-center">
             <button
               type="button"

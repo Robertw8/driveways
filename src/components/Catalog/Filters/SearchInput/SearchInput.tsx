@@ -15,6 +15,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   onSearch,
   onChange,
   onClear,
+  value,
 }) => {
   return (
     <label className="text-light-gray text-sm font-semibold">
@@ -40,6 +41,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         onSearch={onSearch}
         onChange={onChange}
         onClear={onClear}
+        value={value}
       />
     </label>
   );

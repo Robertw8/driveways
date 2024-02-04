@@ -4,15 +4,20 @@ import { useCatalog } from '../../../hooks';
 
 import { ButtonPrimary } from '../..';
 import { SearchInput } from './SearchInput';
+import { PriceFilter } from './PriceFilter';
 
 import makes from '../../../assets/data/makes.json';
-import { setFilters } from '../../../redux/catalog';
+import prices from '../../../assets/data/prices.json';
 
+import { setFilters } from '../../../redux/catalog';
 import type { AutoCompleteProps } from 'antd';
 import type { AppDispatch } from '../../../redux';
 
 const Filters: React.FC = () => {
   const [makesData, setMakesData] = useState<AutoCompleteProps['options']>([]);
+  const [pricesData, setPricesData] = useState<AutoCompleteProps['options']>(
+    []
+  );
   const [searchValue, setSearchValue] = useState<string>('');
   const [priceValue, setPriceValue] = useState<string>('');
 
@@ -26,13 +31,24 @@ const Filters: React.FC = () => {
         value: make.toLowerCase(),
       }))
     );
+
+    setPricesData(
+      prices.map(price => ({
+        label: price,
+        value: price,
+      }))
+    );
   }, []);
 
   const handleSubmit = e => {
     e.preventDefault();
 
     dispatch(
-      setFilters({ ...filters, search: searchValue, rentalPrice: priceValue })
+      setFilters({
+        ...filters,
+        search: searchValue,
+        rentalPrice: priceValue,
+      })
     );
   };
 
@@ -49,16 +65,19 @@ const Filters: React.FC = () => {
         onChange={(value: string) => setSearchValue(value)}
         onSearch={(value: string) => setSearchValue(value)}
         onClear={() => dispatch(setFilters({ ...filters, search: '' }))}
+        value={searchValue}
       />
-
-      <SearchInput
+      <PriceFilter
         placeholder="To $"
+        options={pricesData}
         label="Price/1 hour"
         className="w-32 h-12 block"
         onChange={(value: string) => setPriceValue(value)}
         onSearch={(value: string) => setPriceValue(value)}
-        onClear={() => dispatch(setFilters({ ...filters, rentalPrice: '' }))}
+        onClear={() => dispatch(setFilters({ ...filters, rentalPrice: 0 }))}
+        value={priceValue}
       />
+
       <div className="w-32 h-12">
         <ButtonPrimary text="Search" htmlType="submit" />
       </div>
