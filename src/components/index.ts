@@ -7,3 +7,5 @@ export { Catalog, CarsItem, CarsList } from './Catalog';
 export { Favorites } from './Favorites';
 export { Home } from './Home';
 export { Loader } from './Loader';
+export { Footer } from './Footer';
+export { NavBar } from './NavBar';
