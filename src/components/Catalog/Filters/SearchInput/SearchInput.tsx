@@ -1,7 +1,6 @@
-import { AutoComplete, AutoCompleteProps, Empty } from 'antd';
+import { AutoComplete, type AutoCompleteProps, Empty } from 'antd';
 import { Icon } from '../../..';
-
-import './tailwind.css';
+import '../tailwind.css';
 
 interface SearchInputProps extends AutoCompleteProps {
   label: string;
@@ -18,7 +17,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
   value,
 }) => {
   return (
-    <label className="text-light-gray text-sm font-semibold">
+    <label className="filter-label">
       {label}
       <AutoComplete
         options={options}

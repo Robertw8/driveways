@@ -1,3 +1,11 @@
 .nav-list {
-  @apply flex gap-10 items-center justify-center;
+  @apply flex gap-4 items-center justify-center md:gap-10;
+}
+
+.not-active-nav-button {
+  @apply hover:bg-transparent focus:bg-transparent bg-transparent text-white;
+}
+
+.active-nav-button {
+  @apply text-blue-primary bg-white hover:bg-white hover:text-blue-primary focus:bg-white focus:text-blue-primary;
 }

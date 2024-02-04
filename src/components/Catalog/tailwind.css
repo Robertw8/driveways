@@ -1,3 +1,7 @@
+.cars-list {
+  @apply flex flex-wrap justify-center gap-y-12 gap-x-7;
+}
+
 .card-gradient {
   background: linear-gradient(
     180deg,
@@ -32,4 +36,20 @@
 
 .favorites-button:hover svg {
   stroke: #fff !important;
+}
+
+.card-img-thumb {
+  @apply relative w-full h-64 rounded-xl card-gradient;
+}
+
+.car-title {
+  @apply overflow-hidden text-ellipsis max-w-60 whitespace-nowrap;
+}
+
+.conditions-list {
+  @apply mt-2 text-xs text-gray flex flex-wrap max-w-80 gap-4;
+}
+
+.loadmore-button {
+  @apply border-none rounded-xl duration-300 bg-transparent font-manrope font-semibold text-base text-blue-primary hover:bg-blue-secondary hover:text-white p-2 underline;
 }

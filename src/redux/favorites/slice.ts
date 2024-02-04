@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import {
-  FavoritesInitialState,
+  type FavoritesInitialState,
   addCarToFavorites,
   getFavorites,
   deleteCarFromFavorites,

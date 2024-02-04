@@ -5,7 +5,7 @@ import { useFavorites, useNotFoundTimeout } from '../../../hooks';
 import { CarsItem, Loader } from '../..';
 import { Empty } from 'antd';
 
-import '../../Catalog/CarsList/tailwind.css';
+import '../../Catalog/tailwind.css';
 import { getFavorites } from '../../../redux/favorites';
 import type { AppDispatch } from '../../../redux';
 

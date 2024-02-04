@@ -5,7 +5,8 @@ import { useCatalog } from '../../hooks';
 import { CarsList } from '.';
 import { Filters } from './Filters';
 
-import { AppDispatch } from '../../redux';
+import './tailwind.css';
+import type { AppDispatch } from '../../redux';
 import { getCatalogByPage } from '../../redux/catalog';
 
 const Catalog: React.FC = () => {
@@ -28,7 +29,7 @@ const Catalog: React.FC = () => {
             <button
               type="button"
               onClick={handleLoadMoreClick}
-              className="border-none rounded-xl duration-300 bg-transparent font-manrope font-semibold text-base text-blue-primary hover:bg-blue-secondary hover:text-white p-2 underline"
+              className="loadmore-button"
             >
               Load more
             </button>

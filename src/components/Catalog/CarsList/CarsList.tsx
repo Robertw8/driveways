@@ -8,7 +8,7 @@ import { Empty } from 'antd';
 import { getCatalog, setPaginationEnabled } from '../../../redux/catalog';
 import { getFavorites } from '../../../redux/favorites';
 import type { AppDispatch } from '../../../redux';
-import './tailwind.css';
+import '../tailwind.css';
 
 const CarsList: React.FC = () => {
   const { cars, filters, isLoading } = useCatalog();

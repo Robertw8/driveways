@@ -1,0 +1,11 @@
+.home-container {
+  @apply container mx-auto pb-24 pt-14 px-3 md:px-4 lg:px-6;
+}
+
+.home-title {
+  @apply mt-20 text-primary lg:text-white select-none text-center text-4xl lg:text-7xl;
+}
+
+.home-text {
+  @apply mt-20 text-primary lg:text-white select-none text-center text-2xl lg:text-5xl;
+}

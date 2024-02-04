@@ -1,6 +1,6 @@
 import { Select, type SelectProps } from 'antd';
 import { Icon } from '../../..';
-import '../SearchInput/tailwind.css';
+import '../tailwind.css';
 
 interface PriceFilterProps extends SelectProps {
   label: string;
@@ -15,7 +15,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
   value,
 }) => {
   return (
-    <label className="text-light-gray text-sm font-semibold">
+    <label className="filter-label">
       {label}
       <Select
         options={options}

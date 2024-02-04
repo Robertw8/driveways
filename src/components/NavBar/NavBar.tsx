@@ -2,8 +2,8 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { ButtonPrimary } from '..';
 
 import './tailwind.css';
-import routes from '../../routes';
 import clsx from 'clsx';
+import routes from '../../routes';
 
 const NavBar: React.FC = () => {
   const location = useLocation();
@@ -15,16 +15,14 @@ const NavBar: React.FC = () => {
 
   return (
     <nav>
-      <ul className="flex gap-4 items-center justify-center md:gap-10">
+      <ul className="nav-list">
         <li className="h-9">
           <ButtonPrimary
             text="Home"
             type="default"
             className={clsx(
-              !atHome &&
-                'hover:bg-transparent focus:bg-transparent bg-transparent text-white',
-              atHome &&
-                'text-blue-primary bg-white hover:bg-white hover:text-blue-primary focus:bg-white focus:text-blue-primary'
+              !atHome && 'not-active-nav-button',
+              atHome && 'active-nav-button'
             )}
             onClick={() => navigate(routes.HOME)}
           >
@@ -36,10 +34,8 @@ const NavBar: React.FC = () => {
             text="Catalog"
             type="default"
             className={clsx(
-              !atCatalog &&
-                'hover:bg-transparent focus:bg-transparent bg-transparent text-white',
-              atCatalog &&
-                'text-blue-primary bg-white hover:bg-white hover:text-blue-primary focus:bg-white focus:text-blue-primary'
+              !atCatalog && 'not-active-nav-button',
+              atCatalog && 'active-nav-button'
             )}
             onClick={() => navigate(routes.CATALOG)}
           >
@@ -51,10 +47,8 @@ const NavBar: React.FC = () => {
             text="Favorites"
             type="default"
             className={clsx(
-              !atFavorites &&
-                'hover:bg-transparent focus:bg-transparent bg-transparent text-white',
-              atFavorites &&
-                'text-blue-primary bg-white hover:bg-white hover:text-blue-primary focus:bg-white focus:text-blue-primary'
+              !atFavorites && 'not-active-nav-button',
+              atFavorites && 'active-nav-button'
             )}
             onClick={() => navigate(routes.FAVORITES)}
           >

@@ -5,13 +5,14 @@ import { useFavorites } from '../../../hooks';
 import { ButtonPrimary, Icon } from '../..';
 import { RentalModal } from '..';
 
-import './tailwind.css';
+import '../tailwind.css';
 import clsx from 'clsx';
+import 'animate.css';
+
 import {
   addCarToFavorites,
   deleteCarFromFavorites,
 } from '../../../redux/favorites';
-import 'animate.css';
 
 import type { Car } from '../../../redux/catalog';
 import type { AppDispatch } from '../../../redux';
@@ -37,7 +38,7 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
   return (
     <>
       <li className="w-72">
-        <div className={`relative w-full h-64 rounded-xl card-gradient`}>
+        <div className={`card-img-thumb`}>
           <img
             src={car.img}
             alt={`${car.make} ${car.model}`}
@@ -66,7 +67,7 @@ const CarCard: React.FC<CarCardProps> = ({ car }) => {
         </div>
         <div className="mt-4">
           <div className="flex justify-between">
-            <h4 className="overflow-hidden text-ellipsis max-w-60 whitespace-nowrap">
+            <h4 className="car-title">
               {car.make} <span className="model-span">{car.model}</span>,{' '}
               {car.year}
             </h4>

@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 import { useCatalog } from '../../../hooks';
 
 import { ButtonPrimary } from '../..';
-import { SearchInput } from './SearchInput';
-import { PriceFilter } from './PriceFilter';
+import { SearchInput, PriceFilter } from '.';
 
 import makes from '../../../assets/data/makes.json';
 import prices from '../../../assets/data/prices.json';
+import './tailwind.css';
 
 import { setFilters } from '../../../redux/catalog';
 import type { AutoCompleteProps } from 'antd';
@@ -53,10 +53,7 @@ const Filters: React.FC = () => {
   };
 
   return (
-    <form
-      className="flex flex-col items-start mt-20 mb-32 justify-center md:flex-row md:mt-0 md:mb-0 md:items-end gap-4 h-12"
-      onSubmit={handleSubmit}
-    >
+    <form className="filters-form" onSubmit={handleSubmit}>
       <SearchInput
         placeholder="Enter the text"
         options={makesData}

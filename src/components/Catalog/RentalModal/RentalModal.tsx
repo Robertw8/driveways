@@ -1,8 +1,8 @@
-import { Modal, ModalProps } from 'antd';
+import { Modal, type ModalProps } from 'antd';
 import { ButtonPrimary, Icon } from '../..';
 
-import '../CarsItem/tailwind.css';
-import { Car } from '../../../redux/catalog';
+import '../tailwind.css';
+import type { Car } from '../../../redux/catalog';
 
 interface RentalModal extends ModalProps {
   car: Car;
@@ -76,7 +76,7 @@ const RentalModal: React.FC<RentalModal> = ({ open, car, onCancel, onOk }) => {
           ))}
         </ul>
         <p className="mt-6 font-semibold">Rental Conditions:</p>
-        <ul className="mt-2 text-xs text-gray flex flex-wrap max-w-80 gap-4">
+        <ul className="conditions-list">
           {conditionsArray.map((item, index) => (
             <li key={index}>
               <p>{item}</p>
