@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Video } from './Video';
+import { Suspense, lazy } from 'react';
+import { Loader } from '..';
+
+const Video = lazy(() => import('./Video/Video'));
 
 const Home: React.FC = () => {
   return (
     <>
-      <Video />
+      <Suspense fallback={<Loader />}>
+        <Video />
+      </Suspense>
       <div className="container mx-auto pb-24 pt-14 px-3 md:px-4 lg:px-6">
         <h1 className="mt-20 text-primary lg:text-white select-none text-center text-4xl lg:text-7xl">
           Discover a new journey with{' '}
