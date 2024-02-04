@@ -3,6 +3,7 @@ import { ButtonPrimary, Icon } from '../..';
 
 import '../tailwind.css';
 import type { Car } from '../../../redux/catalog';
+import { addSeparatorToNumber } from '../../../helpers';
 
 interface RentalModal extends ModalProps {
   car: Car;
@@ -86,7 +87,7 @@ const RentalModal: React.FC<RentalModal> = ({ open, car, onCancel, onOk }) => {
             <p>
               Mileage:{' '}
               <span className="text-blue-primary font-semibold">
-                {car.mileage}
+                {addSeparatorToNumber(car.mileage)}
               </span>
             </p>
           </li>
@@ -100,7 +101,9 @@ const RentalModal: React.FC<RentalModal> = ({ open, car, onCancel, onOk }) => {
           </li>
         </ul>
         <div className="w-40 h-11 mt-6">
-          <ButtonPrimary text="Rental car" onClick={onOk}></ButtonPrimary>
+          <a href="tel:+380730000000">
+            <ButtonPrimary text="Rental car" />
+          </a>
         </div>
       </div>
     </Modal>
