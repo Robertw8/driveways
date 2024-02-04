@@ -6,18 +6,16 @@ axios.defaults.baseURL = 'https://65baefd5b4d53c066553b5e4.mockapi.io';
 
 interface GetCatalogArgs {
   search?: string;
-  rentalPrice?: string;
 }
 
 const getCatalog = operationWrapper(
   'catalog/getCatalog',
-  async ({ search, rentalPrice }: GetCatalogArgs) => {
+  async ({ search }: GetCatalogArgs) => {
     const response = await axios.get(`/advert`, {
       params: {
         page: 1,
         limit: 12,
         search,
-        rentalPrice,
       },
     });
 
@@ -28,18 +26,16 @@ const getCatalog = operationWrapper(
 interface GetCatalogByPageArgs {
   page: number;
   search?: string;
-  price?: string;
 }
 
 const getCatalogByPage = operationWrapper(
   'catalog/getCatalogByPage',
-  async ({ page = 2, search, price }: GetCatalogByPageArgs) => {
+  async ({ page = 2, search }: GetCatalogByPageArgs) => {
     const response = await axios.get(`/advert`, {
       params: {
         page,
         limit: 12,
         search,
-        price,
       },
     });
 
@@ -51,4 +47,8 @@ const setFilters = createAction<{ [key: string]: string | number }>(
   'catalog/setFilters'
 );
 
-export { getCatalog, getCatalogByPage, setFilters };
+const setPaginationEnabled = createAction<boolean>(
+  'catalog/setPaginationEnabled'
+);
+
+export { getCatalog, getCatalogByPage, setFilters, setPaginationEnabled };

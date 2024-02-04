@@ -4,6 +4,7 @@ import {
   getCatalog,
   getCatalogByPage,
   setFilters,
+  setPaginationEnabled,
 } from '.';
 
 const initialState: CatalogInitialState = {
@@ -12,7 +13,7 @@ const initialState: CatalogInitialState = {
   error: '',
   filters: {
     search: '',
-    rentalPrice: '',
+    rentalPrice: 0,
   },
   paginationEnabled: false,
 };
@@ -58,8 +59,11 @@ const slice = createSlice({
       .addCase(setFilters, (state, { payload }) => {
         state.filters = {
           search: payload.search as string,
-          rentalPrice: payload.price as string,
+          rentalPrice: payload.rentalPrice as number,
         };
+      })
+      .addCase(setPaginationEnabled, (state, { payload }) => {
+        state.paginationEnabled = payload;
       });
   },
 });

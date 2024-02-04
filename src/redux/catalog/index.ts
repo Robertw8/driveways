@@ -1,4 +1,9 @@
-export { getCatalog, getCatalogByPage, setFilters } from './operations';
+export {
+  getCatalog,
+  getCatalogByPage,
+  setFilters,
+  setPaginationEnabled,
+} from './operations';
 export { catalogReducer } from './slice';
 export {
   selectCars,

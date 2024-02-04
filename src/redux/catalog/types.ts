@@ -8,8 +8,8 @@ interface Car {
   description: string;
   fuelConsumption: string;
   engineSize: string;
-  accessories: string[]; // ?
-  functionalities: string[]; // ?
+  accessories: string[];
+  functionalities: string[];
   rentalPrice: string;
   rentalCompany: string;
   address: string;
@@ -24,7 +24,7 @@ interface CatalogInitialState {
   error: Error | string;
   filters: {
     search: string;
-    rentalPrice: string;
+    rentalPrice: number;
   };
   paginationEnabled: boolean;
 }
