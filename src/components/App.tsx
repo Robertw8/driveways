@@ -1,6 +1,6 @@
-import { lazy, Suspense } from 'react';
+import { lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { Layout, Loader } from '.';
+import { Layout } from '.';
 import routes from '../routes';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
@@ -9,16 +9,14 @@ const FavoritesPage = lazy(() => import('../pages/FavoritesPage'));
 
 const App: React.FC = () => {
   return (
-    <Suspense fallback={<Loader size="large" />}>
-      <Routes>
-        <Route path={routes.HOME} element={<Layout />}>
-          <Route index element={<HomePage />} />
-          <Route path={routes.CATALOG} element={<CatalogPage />} />
-          <Route path={routes.FAVORITES} element={<FavoritesPage />} />
-        </Route>
-        <Route path="*" element={<Navigate to={routes.HOME} />} />
-      </Routes>
-    </Suspense>
+    <Routes>
+      <Route path={routes.HOME} element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path={routes.CATALOG} element={<CatalogPage />} />
+        <Route path={routes.FAVORITES} element={<FavoritesPage />} />
+      </Route>
+      <Route path="*" element={<Navigate to={routes.HOME} />} />
+    </Routes>
   );
 };
 
