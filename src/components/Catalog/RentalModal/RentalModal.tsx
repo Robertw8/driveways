@@ -87,7 +87,7 @@ const RentalModal: React.FC<RentalModal> = ({ open, car, onCancel, onOk }) => {
             <p>
               Mileage:{' '}
               <span className="text-blue-primary font-semibold">
-                {addSeparatorToNumber(car.mileage)}
+                {car.mileage.toLocaleString('en-IN')}
               </span>
             </p>
           </li>
