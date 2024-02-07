@@ -1,10 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { catalogReducer } from './catalog';
-import { favoritesReducer } from './favorites';
+import { persistedFavoritesReducer } from './favorites';
 
 const rootReducer = combineReducers({
   catalog: catalogReducer,
-  favorites: favoritesReducer,
+  favorites: persistedFavoritesReducer,
 });
 
 export default rootReducer;
