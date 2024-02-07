@@ -27,7 +27,7 @@
 }
 
 .favorites-button {
-  @apply absolute top-5 right-5 w-5 h-5 bg-transparent border-none duration-150 hover:scale-105;
+  @apply absolute top-5 right-5 bg-transparent border-none duration-150 hover:scale-105;
 }
 
 .favorites-button:focus {
