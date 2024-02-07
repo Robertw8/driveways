@@ -6,17 +6,15 @@ import { CarsItem } from '..';
 import { Empty } from 'antd';
 
 import { getCatalog, setPaginationEnabled } from '../../../redux/catalog';
-import { getFavorites } from '../../../redux/favorites';
-import type { AppDispatch } from '../../../redux';
 import '../tailwind.css';
+import type { AppDispatch } from '../../../redux';
+import { Loader } from '../..';
 
 const CarsList: React.FC = () => {
   const { cars, filters, isLoading } = useCatalog();
   const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(getFavorites({}));
-
     dispatch(
       getCatalog({
         search: filters.search,
@@ -42,11 +40,12 @@ const CarsList: React.FC = () => {
           description="No cars found"
         />
       )}
-
       <ul className="cars-list">
-        {filteredCars.map(car => (
-          <CarsItem car={car} key={car.car_id} />
-        ))}
+        {!isLoading ? (
+          filteredCars.map(car => <CarsItem car={car} key={car.car_id} />)
+        ) : (
+          <Loader />
+        )}
       </ul>
     </>
   );
