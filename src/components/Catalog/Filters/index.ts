@@ -1,3 +1,3 @@
 export { default as Filters } from './Filters';
-export { SearchInput } from './SearchInput';
+export { SearchFilter } from './SearchFilter';
 export { PriceFilter } from './PriceFilter';

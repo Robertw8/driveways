@@ -2,11 +2,11 @@ import { AutoComplete, type AutoCompleteProps, Empty } from 'antd';
 import { Icon } from '../../..';
 import '../tailwind.css';
 
-interface SearchInputProps extends AutoCompleteProps {
+interface SearchFilterProps extends AutoCompleteProps {
   label: string;
 }
 
-const SearchInput: React.FC<SearchInputProps> = ({
+const SearchFilter: React.FC<SearchFilterProps> = ({
   placeholder,
   options,
   label,
@@ -46,4 +46,4 @@ const SearchInput: React.FC<SearchInputProps> = ({
   );
 };
 
-export default SearchInput;
+export default SearchFilter;

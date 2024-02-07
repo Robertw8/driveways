@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useCatalog } from '../../../hooks';
 
 import { ButtonPrimary } from '../..';
-import { SearchInput, PriceFilter } from '.';
+import { SearchFilter, PriceFilter } from '.';
 
 import makes from '../../../assets/data/makes.json';
 import prices from '../../../assets/data/prices.json';
@@ -54,7 +54,7 @@ const Filters: React.FC = () => {
 
   return (
     <form className="filters-form" onSubmit={handleSubmit}>
-      <SearchInput
+      <SearchFilter
         placeholder="Enter the text"
         options={makesData}
         label="Car brand"
@@ -62,17 +62,16 @@ const Filters: React.FC = () => {
         onChange={(value: string) => setSearchValue(value)}
         onSearch={(value: string) => setSearchValue(value)}
         onClear={() => dispatch(setFilters({ ...filters, search: '' }))}
-        value={searchValue}
+        value={filters.search || searchValue}
       />
       <PriceFilter
-        placeholder="To $"
         options={pricesData}
         label="Price/1 hour"
         className="w-32 h-12 block"
         onChange={(value: string) => setPriceValue(value)}
         onSearch={(value: string) => setPriceValue(value)}
         onClear={() => dispatch(setFilters({ ...filters, rentalPrice: 0 }))}
-        value={priceValue}
+        value={filters.rentalPrice || priceValue}
       />
 
       <div className="w-32 h-12">
