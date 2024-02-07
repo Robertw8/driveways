@@ -27,7 +27,9 @@
   <img src="https://img.icons8.com/fluency/48/vite.png" alt="vite" width="40" height="40"/>
 </div>
 
-
 <h2>Preview</h2>
-<img src="https://i.imgur.com/ghvHHJS.png" alt="preview"/>
+<img src="https://i.imgur.com/ghvHHJS.png" alt="homepage" />
+<img src="https://i.imgur.com/a7wcaUC.png" alt="catalog page" />
+<img src="https://i.imgur.com/u7isz9w.png" alt="favorites page" />
+<img src="https://i.imgur.com/cbKs80u.png" alt="car popup" />
 
