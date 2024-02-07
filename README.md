@@ -1,8 +1,16 @@
-# Driveways rental
-### A small car rental app with search filters in the catalog and the ability to add cars to favorites
+<h1 align="center">Driveways car rental</h1>
 
-## Stack
+<h2>Description</h2>
+<p>A small app for car rental, where you can use search filters by car brand and rental price, and add cars to favorites.</p>
 
+<h2>Functionalities</h2>
+<ul>
+  <li>catalog pagination</li>
+  <li>search filters by car brand and rental price</li>
+  <li>adding cars to the favorites page</li>
+</ul>
+
+<h2>Built with</h2>
 <div align="left">
   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="40" alt="typescript logo"  />
   <img width="12" />
@@ -18,3 +26,8 @@
   <img width="12" />
   <img src="https://img.icons8.com/fluency/48/vite.png" alt="vite" width="40" height="40"/>
 </div>
+
+
+<h2>Preview</h2>
+<img src="https://i.imgur.com/ghvHHJS.png" alt="preview"/>
+
