@@ -3,7 +3,7 @@
 }
 
 .not-active-nav-button {
-  @apply hover:bg-transparent focus:bg-transparent bg-transparent text-white;
+  @apply hover:bg-transparent hover:text-white focus:bg-transparent bg-transparent text-white;
 }
 
 .active-nav-button {

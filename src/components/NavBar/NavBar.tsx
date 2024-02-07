@@ -19,7 +19,7 @@ const NavBar: React.FC = () => {
         <li className="h-9">
           <ButtonPrimary
             text="Home"
-            type="default"
+            type="primary"
             className={clsx(
               !atHome && 'not-active-nav-button',
               atHome && 'active-nav-button'
@@ -32,7 +32,7 @@ const NavBar: React.FC = () => {
         <li className="h-9">
           <ButtonPrimary
             text="Catalog"
-            type="default"
+            type="primary"
             className={clsx(
               !atCatalog && 'not-active-nav-button',
               atCatalog && 'active-nav-button'
@@ -45,7 +45,7 @@ const NavBar: React.FC = () => {
         <li className="h-9">
           <ButtonPrimary
             text="Favorites"
-            type="default"
+            type="primary"
             className={clsx(
               !atFavorites && 'not-active-nav-button',
               atFavorites && 'active-nav-button'
