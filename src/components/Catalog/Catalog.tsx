@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { useCatalog } from '../../hooks';
+import { useCatalog, useAdBlockCheck } from '../../hooks';
 
 import { CarsList } from '.';
 import { Filters } from './Filters';
@@ -11,8 +11,9 @@ import { getCatalogByPage } from '../../redux/catalog';
 
 const Catalog: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const { paginationEnabled, isLoading } = useCatalog();
+  const { paginationEnabled, isLoading, cars } = useCatalog();
   const pageRef = useRef(1);
+  const listBlocked = useAdBlockCheck(cars, isLoading);
 
   const handleLoadMoreClick = () => {
     pageRef.current += 1;
@@ -23,7 +24,14 @@ const Catalog: React.FC = () => {
     <>
       <Filters />
       <div className="mt-10">
-        <CarsList />
+        {!listBlocked ? (
+          <CarsList />
+        ) : (
+          <p className="text-center">
+            please turn off your ad blocker as it blocks the display of the car
+            catalog
+          </p>
+        )}
         {paginationEnabled && !isLoading && (
           <div className="mt-24 flex justify-center">
             <button
