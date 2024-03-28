@@ -2,7 +2,7 @@ import axios from 'axios';
 import { operationWrapper } from '../../helpers';
 import { createAction } from '@reduxjs/toolkit';
 
-axios.defaults.baseURL = 'https://65baefd5b4d53c066553b5e4.mockapi.io';
+axios.defaults.baseURL = 'https://65baefd5b4d53c066553b5e4.mockapi.io/api';
 
 interface GetCatalogArgs {
   search?: string;
@@ -11,7 +11,7 @@ interface GetCatalogArgs {
 const getCatalog = operationWrapper(
   'catalog/getCatalog',
   async ({ search }: GetCatalogArgs) => {
-    const response = await axios.get(`/advert`, {
+    const response = await axios.get(`/cars`, {
       params: {
         page: 1,
         limit: 12,
@@ -31,7 +31,7 @@ interface GetCatalogByPageArgs {
 const getCatalogByPage = operationWrapper(
   'catalog/getCatalogByPage',
   async ({ page = 2, search }: GetCatalogByPageArgs) => {
-    const response = await axios.get(`/advert`, {
+    const response = await axios.get(`/cars`, {
       params: {
         page,
         limit: 12,
